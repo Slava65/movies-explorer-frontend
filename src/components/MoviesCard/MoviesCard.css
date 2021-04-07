@@ -81,10 +81,10 @@
 
 @media screen and (max-width: 760px) {
   .moviescard {
-    width: 100%;
+    width: 300px;
   }
   .moviescard__image {
-    width: 100%;
+    width: 300px;
   }
   .moviescard__title {
     width: 220px;
