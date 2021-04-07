@@ -6,7 +6,7 @@ function Login() {
       <Link to={"/"} className="login__link">
         <button
           type="button"
-          className="register__logo"
+          className="login__logo"
           aria-label="О проекте"
         ></button>
       </Link>

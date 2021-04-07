@@ -7,22 +7,82 @@ const movie = {
   url: examplePicture,
 };
 
-function MoviesCardList({ isSavedMovies }) {
+function MoviesCardList({ isSavedMovies, isMovieLike, likeMovieHandle }) {
   return (
     <moviescardlist class="moviescardlist">
       <ul className="moviescardlist__list">
-        <MoviesCard movie={movie} isSavedMovies={isSavedMovies} />
-        <MoviesCard movie={movie} isSavedMovies={isSavedMovies} />
-        <MoviesCard movie={movie} isSavedMovies={isSavedMovies} />
-        <MoviesCard movie={movie} isSavedMovies={isSavedMovies} />
-        <MoviesCard movie={movie} isSavedMovies={isSavedMovies} />
-        <MoviesCard movie={movie} isSavedMovies={isSavedMovies} />
-        <MoviesCard movie={movie} isSavedMovies={isSavedMovies} />
-        <MoviesCard movie={movie} isSavedMovies={isSavedMovies} />
-        <MoviesCard movie={movie} isSavedMovies={isSavedMovies} />
-        <MoviesCard movie={movie} isSavedMovies={isSavedMovies} />
-        <MoviesCard movie={movie} isSavedMovies={isSavedMovies} />
-        <MoviesCard movie={movie} isSavedMovies={isSavedMovies} />
+        <MoviesCard
+          movie={movie}
+          isSavedMovies={isSavedMovies}
+          isMovieLike={isMovieLike}
+          likeMovieHandle={likeMovieHandle}
+        />
+        <MoviesCard
+          movie={movie}
+          isSavedMovies={isSavedMovies}
+          isMovieLike={isMovieLike}
+          likeMovieHandle={likeMovieHandle}
+        />
+        <MoviesCard
+          movie={movie}
+          isSavedMovies={isSavedMovies}
+          isMovieLike={isMovieLike}
+          likeMovieHandle={likeMovieHandle}
+        />
+        <MoviesCard
+          movie={movie}
+          isSavedMovies={isSavedMovies}
+          isMovieLike={isMovieLike}
+          likeMovieHandle={likeMovieHandle}
+        />
+        <MoviesCard
+          movie={movie}
+          isSavedMovies={isSavedMovies}
+          isMovieLike={isMovieLike}
+          likeMovieHandle={likeMovieHandle}
+        />
+        <MoviesCard
+          movie={movie}
+          isSavedMovies={isSavedMovies}
+          isMovieLike={isMovieLike}
+          likeMovieHandle={likeMovieHandle}
+        />
+        <MoviesCard
+          movie={movie}
+          isSavedMovies={isSavedMovies}
+          isMovieLike={isMovieLike}
+          likeMovieHandle={likeMovieHandle}
+        />
+        <MoviesCard
+          movie={movie}
+          isSavedMovies={isSavedMovies}
+          isMovieLike={isMovieLike}
+          likeMovieHandle={likeMovieHandle}
+        />
+        <MoviesCard
+          movie={movie}
+          isSavedMovies={isSavedMovies}
+          isMovieLike={isMovieLike}
+          likeMovieHandle={likeMovieHandle}
+        />
+        <MoviesCard
+          movie={movie}
+          isSavedMovies={isSavedMovies}
+          isMovieLike={isMovieLike}
+          likeMovieHandle={likeMovieHandle}
+        />
+        <MoviesCard
+          movie={movie}
+          isSavedMovies={isSavedMovies}
+          isMovieLike={isMovieLike}
+          likeMovieHandle={likeMovieHandle}
+        />
+        <MoviesCard
+          movie={movie}
+          isSavedMovies={isSavedMovies}
+          isMovieLike={isMovieLike}
+          likeMovieHandle={likeMovieHandle}
+        />
       </ul>
       <button type="button" className="moviescardlist__else" aria-label="Еще">
         Еще

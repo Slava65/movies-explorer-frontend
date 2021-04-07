@@ -4,7 +4,7 @@ import searchFormIcon from "../../images/search-film-icon.svg";
 function SearchForm() {
   return (
     <searchform class="searchform">
-      <input class="searchform__film" placeholder="Фильм"></input>
+      <input class="searchform__film" placeholder="Фильм" required></input>
       <img
         className="searchform__icon"
         src={searchFormIcon}

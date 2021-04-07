@@ -33,6 +33,11 @@
   padding: 0;
 }
 
+.moviescardlist__else:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1240px) {
   .moviescardlist__list {
     grid-template-columns: repeat(2, auto);

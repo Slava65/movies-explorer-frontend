@@ -44,13 +44,18 @@
   height: 34px;
   border: none;
   border-radius: 48px;
-  background-color: #ff6838;
+  background-color: #3456F3;
   font-family: "Inter", ‘Arial’, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 11px;
   line-height: 18px;
   color: #FFFFFF;
+}
+
+.searchform__button:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .searchform__checkbox {
@@ -76,6 +81,11 @@
 
 .searchform__checkbox:checked + label::before {
   background-image: url("../../images/searchform__checkbox_disabled.svg");
+}
+
+.searchform__checkbox + label:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .searchform__lable {

@@ -1,6 +1,6 @@
 import React from "react";
 
-function MoviesCard({ movie, isSavedMovies} ) {
+function MoviesCard({ movie, isSavedMovies, isMovieLike, likeMovieHandle }) {
   return (
     <li className="moviescard">
       <article>
@@ -11,8 +11,11 @@ function MoviesCard({ movie, isSavedMovies} ) {
           </div>
           <button
             type="button"
-            className= {`moviescard__save ${isSavedMovies && "moviescard__save_delete"}`}
+            className={`moviescard__save ${
+              isSavedMovies && "moviescard__save_delete"
+            } ${isMovieLike && "moviescard__save_active"}`}
             aria-label="Сохранить"
+            onClick={likeMovieHandle}
           ></button>
         </div>
         <img className="moviescard__image" alt={movie.nameRU} src={movie.url} />

@@ -10,6 +10,12 @@
 
 .login__link {
   align-self: flex-start;
+  margin-bottom: 40px;
+}
+
+.login__link:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .login__logo {
@@ -20,7 +26,6 @@
   background-size: contain;
   background-color: #ffffff;
   padding: 0;
-  margin-bottom: 40px;
 }
 
 .login__title {
@@ -97,6 +102,11 @@
   border-radius: 3px;
 }
 
+.login__finish:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
 .login__register-text {
   font-family: "Inter", ‘Arial’, sans-serif;
   font-style: normal;
@@ -109,8 +119,13 @@
 }
 
 .login__register-text_signup {
-  color: #ff6838;
+  color: #3456F3;
   margin-left: 6px;
+}
+
+.login__register-text_signup:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .login__register {

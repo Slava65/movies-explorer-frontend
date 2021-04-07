@@ -35,7 +35,8 @@
 }
 
 .profile__name {
-  padding: 0;
+  height: 30px;
+  padding: 0 0 12px;
   border: none;
   width: 410px;
   text-align: end;
@@ -47,7 +48,8 @@
 }
 
 .profile__email {
-  padding: 0;
+  height: 30px;
+  padding: 13px 0 0;
   border: none;
   width: 410px;
   text-align: end;
@@ -76,7 +78,7 @@
   font-weight: 500;
   font-size: 11px;
   line-height: 13px;
-  top: 0;
+  top: 3px;
   margin-block-start: 0;
   margin-block-end: 0;
 }
@@ -105,6 +107,11 @@
   margin-bottom: 16px;
 }
 
+.profile__edit:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
 .profile__exit {
   font-family: "Inter", ‘Arial’, sans-serif;
   font-style: normal;
@@ -113,6 +120,11 @@
   line-height: 16px;
   color: #ee3465;
   text-decoration: none;
+}
+
+.profile__exit:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .profile__manage-block {
@@ -156,10 +168,12 @@
 
   .profile__name {
     width: 100%;
+    padding-bottom: 10px;
   }
 
   .profile__email {
     width: 100%;
+    padding-top: 10px;
   }
 
   .profile__line {

@@ -51,8 +51,17 @@
   align-self: center;
 }
 
+.moviescard__save:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
 .moviescard__save_delete {
   background-image: url("../../images/movie-card-delete.svg");
+}
+
+.moviescard__save_active {
+  background-image: url("../../images/moviecard-save-active.svg");
 }
 
 .moviescard__image {
@@ -72,12 +81,12 @@
 
 @media screen and (max-width: 760px) {
   .moviescard {
-    width: 300px;
+    width: 100%;
   }
   .moviescard__image {
-    width: 300px;
+    width: 100%;
   }
   .moviescard__title {
-    width:220px;
+    width: 220px;
   }
 }

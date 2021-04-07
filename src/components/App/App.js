@@ -14,6 +14,7 @@ import { Route } from "react-router-dom";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMovieLike, setIsMovieLike] = React.useState(false);
 
   function openMenu() {
     setIsMenuOpen(true);
@@ -21,6 +22,14 @@ function App() {
 
   function closeMenu() {
     setIsMenuOpen(false);
+  }
+
+  function likeMovieHandle() {
+    if (isMovieLike === false) {
+      setIsMovieLike(true);
+    } else {
+      setIsMovieLike(false);
+    }
   }
 
   return (
@@ -37,7 +46,11 @@ function App() {
             openMenu={openMenu}
             closeMenu={closeMenu}
           />
-          <Movies isSavedMovies="" />
+          <Movies
+            isSavedMovies=""
+            isMovieLike={isMovieLike}
+            likeMovieHandle={likeMovieHandle}
+          />
           <Footer />
         </Route>
         <Route path="/saved-movies">
