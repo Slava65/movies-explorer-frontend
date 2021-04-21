@@ -1,16 +1,31 @@
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
-function Movies({ isSavedMovies, isMovieLike, likeMovieHandle }) {
+function Movies({
+  isSavedMovies,
+  isMovieLike,
+  likeMovieHandle,
+  movies,
+  handleUpdateFindWord, 
+  handleAddMovie,
+  handleChangeCountMovies,
+  countmovies,
+  savedMovies
+}) {
   return (
-    <movies className="movies">
-      <SearchForm />
+    <div className="movies">
+    <SearchForm handleUpdateFindWord={handleUpdateFindWord} />
       <MoviesCardList
         isSavedMovies={isSavedMovies}
         isMovieLike={isMovieLike}
         likeMovieHandle={likeMovieHandle}
+        movies={movies}
+        handleAddMovie={handleAddMovie}
+        handleChangeCountMovies={handleChangeCountMovies}
+        countmovies={countmovies}
+        savedMovies={savedMovies}
       />
-    </movies>
+    </div>
   );
 }
 

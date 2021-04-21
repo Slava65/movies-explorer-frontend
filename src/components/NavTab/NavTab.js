@@ -1,6 +1,6 @@
 function NavTab() {
     return (
-      <navtab className='navtab'>
+      <div className='navtab'>
         <nav className='navtab__menu'>
         <button
               type="button"
@@ -24,7 +24,7 @@ function NavTab() {
               Студент
             </button>
         </nav>
-      </navtab>
+      </div>
     );
   }
   

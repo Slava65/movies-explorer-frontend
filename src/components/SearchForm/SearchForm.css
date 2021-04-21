@@ -71,7 +71,7 @@
   user-select: none;
   content: "";
   display: inline-block;
-  background-image: url("../../images/searchform__checkbox.svg");
+  background-image: url("../../images/searchform__checkbox_disabled.svg");
   background-repeat: no-repeat;
   background-position: center center;
   width: 36px;
@@ -80,7 +80,7 @@
 }
 
 .searchform__checkbox:checked + label::before {
-  background-image: url("../../images/searchform__checkbox_disabled.svg");
+  background-image: url("../../images/searchform__checkbox.svg");
 }
 
 .searchform__checkbox + label:hover {

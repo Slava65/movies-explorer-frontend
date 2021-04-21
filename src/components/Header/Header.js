@@ -2,7 +2,10 @@ import Navigation from "../Navigation/Navigation";
 import { Route, Link, Switch } from "react-router-dom";
 import React from "react";
 
-function Header({ isMenuOpen, openMenu, closeMenu }) {
+function Header({ isMenuOpen, openMenu, closeMenu, headerToSignIn }) {
+
+ 
+
   return (
     <header className="header">
       <Link to={"/"}>
@@ -22,6 +25,7 @@ function Header({ isMenuOpen, openMenu, closeMenu }) {
               type="button"
               className="header__button-in"
               aria-label="Войти"
+              onClick={headerToSignIn}
             >
               Войти
             </button>

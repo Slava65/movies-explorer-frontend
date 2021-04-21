@@ -1,12 +1,12 @@
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
-function SavedMovies({ isSavedMovies }) {
+function SavedMovies({ isSavedMovies, savedMovies, handleCardDelete, handleFindSavedMovies }) {
   return (
-    <savedmovies className="movies">
-      <SearchForm />
-      <MoviesCardList isSavedMovies={isSavedMovies} />
-    </savedmovies>
+    <div className="movies">
+      <SearchForm handleFindSavedMovies={handleFindSavedMovies} isSavedMovies={isSavedMovies} />
+      <MoviesCardList isSavedMovies={isSavedMovies} savedMovies={savedMovies} handleCardDelete={handleCardDelete} />
+    </div>
   );
 }
 

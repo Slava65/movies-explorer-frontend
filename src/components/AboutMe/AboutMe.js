@@ -4,7 +4,7 @@ import myFoto from "../../images/my-foto.jpg";
 
 function AboutMe() {
   return (
-    <aboutme className="aboutme">
+    <section className="aboutme">
       <h3 className="aboutme__title">Студент</h3>
       <hr className="aboutme__line"></hr>
       <img className="aboutme__myfoto" src={myFoto} alt="Мое фото"></img>
@@ -18,7 +18,7 @@ function AboutMe() {
         работаю в банковской сфере. Хочу вернуться в сферу IT-технологий. Почти
         год изучаю веб-разработку на Яндекс-Практикуме.
       </p>
-      <nav class="aboutme__menu">
+      <nav className="aboutme__menu">
         <Link to={"https://vk.com/slava_sakh"} className="aboutme__link">
           Вконтакте
         </Link>
@@ -27,7 +27,7 @@ function AboutMe() {
         </Link>
       </nav>
       <Portfolio />
-    </aboutme>
+    </section>
   );
 }
 

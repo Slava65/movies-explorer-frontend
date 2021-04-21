@@ -1,8 +1,29 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
-function Login() {
+function Login({ handleLogin }) {
+
+  const [data, setData] = React.useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleLogin(data);
+  };
+
+
   return (
-    <form className="login">
+    <form className="login" onSubmit={handleSubmit} >
       <Link to={"/"} className="login__link">
         <button
           type="button"
@@ -17,6 +38,7 @@ function Login() {
         id="email"
         type="text"
         name="email"
+        onChange={handleChange}
       ></input>
       <p className="login__data-lable">Пароль</p>
       <input
@@ -24,13 +46,14 @@ function Login() {
         id="password"
         type="password"
         name="password"
+        onChange={handleChange}
       ></input>
       <label className="login__error">Что-то пошло не так ...</label>
-      <button type="button" className="login__finish">
-        Зарегистрироваться
+      <button type="submit" className="login__finish">
+        Войти
       </button>
       <div className="login__register">
-        <p class="login__register-text">Ещё не зарегистрированы?</p>
+        <p className="login__register-text">Ещё не зарегистрированы?</p>
         <Link
           to={"/signin"}
           className="login__register-text login__register-text_signup"

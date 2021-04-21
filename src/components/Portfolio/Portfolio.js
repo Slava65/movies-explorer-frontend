@@ -2,7 +2,7 @@ import itemIcon from "../../images/portfolio__item_icon.svg";
 
 function Portfolio() {
   return (
-    <portfolio className="portfolio">
+    <section className="portfolio">
       <p className="portfolio__lable">Портфолио</p>
       <ul className="portfolio__list">
         <li className="portfolio__item">
@@ -36,7 +36,7 @@ function Portfolio() {
           </p>
         </li>
       </ul>
-    </portfolio>
+    </section>
   );
 }
 
