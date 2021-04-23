@@ -18,7 +18,6 @@
   cursor: pointer;
 }
 
-
 .register__logo {
   width: 38px;
   height: 38px;
@@ -96,11 +95,16 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  color: #ffffff;
-  background-color: #ff6838;
+  color: #c2c2c2;
+  background-color: #f8f8f8;
   margin-bottom: 16px;
   border: none;
   border-radius: 3px;
+}
+
+.register__finish_active {
+  background-color: #ff6838;
+  color: #ffffff;
 }
 
 .register__finish:hover {
@@ -120,7 +124,7 @@
 }
 
 .register__login-text_signin {
-  color: #3456F3;
+  color: #3456f3;
   margin-left: 6px;
 }
 

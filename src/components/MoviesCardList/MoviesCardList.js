@@ -11,13 +11,12 @@ function MoviesCardList({
   countmovies,
   savedMovies,
   handleCardDelete,
+  handleCardDeleteFromMovie
 }) {
   function getIsSaved(id) {
     const a = savedMovies.filter((movie) => {
-      console.log(movie.movieId, id)
       return movie.movieId === id;
     });
-    console.log(a)
     if (a.length === 0) {
       return false
     } else {
@@ -44,6 +43,7 @@ function MoviesCardList({
                 likeMovieHandle={likeMovieHandle}
                 handleAddMovie={handleAddMovie}
                 getIsSaved={getIsSaved}
+                handleCardDeleteFromMovie={handleCardDeleteFromMovie}
               />
             ))}
         {isSavedMovies &&

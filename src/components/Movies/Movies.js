@@ -10,7 +10,8 @@ function Movies({
   handleAddMovie,
   handleChangeCountMovies,
   countmovies,
-  savedMovies
+  savedMovies,
+  handleCardDeleteFromMovie
 }) {
   return (
     <div className="movies">
@@ -24,6 +25,7 @@ function Movies({
         handleChangeCountMovies={handleChangeCountMovies}
         countmovies={countmovies}
         savedMovies={savedMovies}
+        handleCardDeleteFromMovie={handleCardDeleteFromMovie}
       />
     </div>
   );

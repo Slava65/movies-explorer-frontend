@@ -59,7 +59,6 @@ function App() {
       });
   }, [loggedIn]);
 
-
   function onRegister(data) {
     const { email, name, password } = data;
     return mainapi
@@ -235,15 +234,32 @@ function App() {
       });
   }
 
+  function handleCardDeleteFromMovie(movieId, movie) {
+    const currentMovie = savedMovies.filter((c) => {
+      return c.id === movieId;
+    });
+    mainapi
+      .deleteMovie(currentMovie._id)
+      .then((res) => {
+        const currentMovies = movies.filter((c) => {
+          return c.id !== movie.id;
+        });
+        setMovies(currentMovies);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   function onUpdateUser(newData) {
     mainapi
-    .updateUser(newData)
-    .then((info) => {
-      setCurrentUser(info.user);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      .updateUser(newData)
+      .then((info) => {
+        setCurrentUser(info.user);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   function openMenu() {
@@ -297,6 +313,7 @@ function App() {
               handleChangeCountMovies={handleChangeCountMovies}
               countmovies={countmovies}
               savedMovies={savedMovies}
+              handleCardDeleteFromMovie={handleCardDeleteFromMovie}
               component={Movies}
             />
             <Footer />
@@ -324,7 +341,12 @@ function App() {
               openMenu={openMenu}
               closeMenu={closeMenu}
             />
-            <ProtectedRoute loggedIn={loggedIn} onUpdateUser={onUpdateUser} onSignOut={onSignOut} component={Profile} />
+            <ProtectedRoute
+              loggedIn={loggedIn}
+              onUpdateUser={onUpdateUser}
+              onSignOut={onSignOut}
+              component={Profile}
+            />
           </Route>
           <Route path="/signup">
             <Register onRegister={onRegister} />

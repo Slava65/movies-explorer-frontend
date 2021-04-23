@@ -1,29 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useFormWithValidation from "../../utiles/validation";
 
 function Login({ handleLogin }) {
-
-  const [data, setData] = React.useState({
-    email: "",
-    password: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setData({
-      ...data,
-      [name]: value,
-    });
-  };
-
+  const validation = useFormWithValidation();
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleLogin(data);
+    handleLogin(validation.data);
   };
 
-
   return (
-    <form className="login" onSubmit={handleSubmit} >
+    <form className="login" onSubmit={handleSubmit}>
       <Link to={"/"} className="login__link">
         <button
           type="button"
@@ -38,7 +25,8 @@ function Login({ handleLogin }) {
         id="email"
         type="text"
         name="email"
-        onChange={handleChange}
+        onChange={validation.handleChange}
+        required
       ></input>
       <p className="login__data-lable">Пароль</p>
       <input
@@ -46,10 +34,11 @@ function Login({ handleLogin }) {
         id="password"
         type="password"
         name="password"
-        onChange={handleChange}
+        onChange={validation.handleChange}
+        required
       ></input>
       <label className="login__error">Что-то пошло не так ...</label>
-      <button type="submit" className="login__finish">
+      <button type="submit" className={`login__finish ${validation.isValid && "login__finish_active"}`}>
         Войти
       </button>
       <div className="login__register">
