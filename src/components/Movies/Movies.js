@@ -6,27 +6,29 @@ function Movies({
   isMovieLike,
   likeMovieHandle,
   movies,
-  handleUpdateFindWord, 
+  handleUpdateFindWord,
   handleAddMovie,
   handleChangeCountMovies,
   countmovies,
   savedMovies,
-  handleCardDeleteFromMovie
+  handleCardDeleteFromMovie,
 }) {
   return (
     <div className="movies">
-    <SearchForm handleUpdateFindWord={handleUpdateFindWord} />
-      <MoviesCardList
-        isSavedMovies={isSavedMovies}
-        isMovieLike={isMovieLike}
-        likeMovieHandle={likeMovieHandle}
-        movies={movies}
-        handleAddMovie={handleAddMovie}
-        handleChangeCountMovies={handleChangeCountMovies}
-        countmovies={countmovies}
-        savedMovies={savedMovies}
-        handleCardDeleteFromMovie={handleCardDeleteFromMovie}
-      />
+      <SearchForm handleUpdateFindWord={handleUpdateFindWord} movies={movies} />
+      {(movies.length > 0) && (
+        <MoviesCardList
+          isSavedMovies={isSavedMovies}
+          isMovieLike={isMovieLike}
+          likeMovieHandle={likeMovieHandle}
+          movies={movies}
+          handleAddMovie={handleAddMovie}
+          handleChangeCountMovies={handleChangeCountMovies}
+          countmovies={countmovies}
+          savedMovies={savedMovies}
+          handleCardDeleteFromMovie={handleCardDeleteFromMovie}
+        />
+      )}
     </div>
   );
 }

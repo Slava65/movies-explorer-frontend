@@ -8,9 +8,17 @@ function MoviesCard({
   handleCardDelete,
   getIsSaved,
   handleCardDeleteFromMovie,
+  savedMovies
 }) {
   const baseUrl = "https://api.nomoreparties.co";
   const currentUser = React.useContext(CurrentUserContext);
+  const [isSavedMovie, setIsSavedMovie] = React.useState(false);
+
+  React.useEffect(() => {
+    let isMovieSaved = getIsSaved(movie.id);
+    setIsSavedMovie(isMovieSaved);
+    console.log(isMovieSaved)
+  }, [savedMovies]);
 
   function addMovie(e) {
     const user = currentUser._id;
@@ -29,8 +37,8 @@ function MoviesCard({
       nameEN: movie.nameEN,
     };
     e.preventDefault();
-    console.log(newMovie);
     handleAddMovie(newMovie);
+    
   }
 
   function deleteFromSavedMovie() {
@@ -39,10 +47,9 @@ function MoviesCard({
 
   function deleteFromMovie() {
     handleCardDeleteFromMovie(movie.id, movie);
-    console.log(movie.id, movie)
+   
   }
 
-  let isSavedMovie = getIsSaved(movie.id);
   return (
     <li className="moviescard">
       <article>
@@ -59,16 +66,18 @@ function MoviesCard({
               onClick={deleteFromSavedMovie}
             ></button>
           )}
-          {!isSavedMovie && (
+          {!isSavedMovies && (
             <button
             type="button"
             className={`moviescard__save ${isSavedMovie && "moviescard__save_active"}`}
             aria-label="Сохранить"
             onClick={
-              (isSavedMovies ? deleteFromMovie : addMovie)
+              (isSavedMovie ? deleteFromMovie : addMovie)
             }
           ></button>
           )}
+
+
 
           {/* <button
             type="button"
@@ -82,6 +91,7 @@ function MoviesCard({
             }
           ></button> */}
         </div>
+        <a href={isSavedMovies ? movie.trailer : movie.trailerLink}>
         <img
           className="moviescard__image"
           alt={movie.nameRU}
@@ -89,6 +99,7 @@ function MoviesCard({
             isSavedMovies ? `${movie.image}` : `${baseUrl}${movie.image.url}`
           }
         />
+        </a>
       </article>
     </li>
   );

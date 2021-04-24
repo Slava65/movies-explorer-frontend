@@ -11,16 +11,16 @@ function MoviesCardList({
   countmovies,
   savedMovies,
   handleCardDelete,
-  handleCardDeleteFromMovie
+  handleCardDeleteFromMovie,
 }) {
   function getIsSaved(id) {
     const a = savedMovies.filter((movie) => {
       return movie.movieId === id;
     });
     if (a.length === 0) {
-      return false
+      return false;
     } else {
-      return true
+      return true;
     }
   }
 
@@ -44,6 +44,7 @@ function MoviesCardList({
                 handleAddMovie={handleAddMovie}
                 getIsSaved={getIsSaved}
                 handleCardDeleteFromMovie={handleCardDeleteFromMovie}
+                savedMovies={savedMovies}
               />
             ))}
         {isSavedMovies &&
@@ -60,16 +61,18 @@ function MoviesCardList({
             />
           ))}
       </ul>
-      {!isSavedMovies && (
-        <button
-          type="button"
-          className="moviescardlist__else"
-          aria-label="Еще"
-          onClick={addMovies}
-        >
-          Еще
-        </button>
-      )}
+      {!isSavedMovies &&
+        movies.length > countmovies - 3 &&
+        movies.length > countmovies && (
+          <button
+            type="button"
+            className="moviescardlist__else"
+            aria-label="Еще"
+            onClick={addMovies}
+          >
+            Еще
+          </button>
+        )}
     </section>
   );
 }

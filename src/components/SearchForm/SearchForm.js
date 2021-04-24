@@ -1,7 +1,7 @@
 import React from "react";
 import searchFormIcon from "../../images/search-film-icon.svg";
 
-function SearchForm({ handleUpdateFindWord, handleFindSavedMovies, isSavedMovies }) {
+function SearchForm({ handleUpdateFindWord, handleFindSavedMovies, isSavedMovies, movies }) {
   const [word, setWord] = React.useState("");
   const [isChecked, setIsChecked] = React.useState(false);
 
@@ -21,6 +21,7 @@ function SearchForm({ handleUpdateFindWord, handleFindSavedMovies, isSavedMovies
     else {
       setIsChecked(false);
     }
+    movies.length > 0 && handleUpdateFindWord(word, isChecked)
   }
 
   return (

@@ -41,7 +41,10 @@ function App() {
     mainapi
       .getInitialMovies()
       .then((res) => {
-        setSavedMovies(res.data);
+        const userMovies = res.data.filter((movie) => {
+          return movie.owner === currentUser._id;
+        })
+        setSavedMovies(userMovies);
       })
       .catch((err) => {
         console.log(err);
@@ -114,6 +117,7 @@ function App() {
         if (res) {
           const convertedRes = moviesConvert(res);
           const filteredRes = findMovies(convertedRes, word, isChecked);
+          console.log(filteredRes);
           setMovies(filteredRes);
         }
       })
@@ -132,18 +136,18 @@ function App() {
   function moviesConvert(movies) {
     return movies.map((movie) => {
       return {
-        country: movie.country || "",
+        country: movie.country || "Какая-то страна",
         created_at: movie.created_at,
-        description: movie.description || "",
-        director: movie.director || "",
+        description: movie.description || "Здесь должно было быть описание",
+        director: movie.director || "Какой-то директор",
         duration: movie.duration,
         id: movie.id,
-        image: movie.image || "",
-        nameEN: movie.nameEN || "",
-        nameRU: movie.nameRU || "",
+        image: movie.image || "Путь к картинке",
+        nameEN: movie.nameEN || "Здесь должно быть описание на английском",
+        nameRU: movie.nameRU || "Здесь должно быть описание на русском",
         trailerLink: movie.trailerLink,
         updated_at: movie.updated_at,
-        year: movie.year || "",
+        year: movie.year || "Год такой-то",
       };
     });
   }
@@ -234,17 +238,19 @@ function App() {
       });
   }
 
-  function handleCardDeleteFromMovie(movieId, movie) {
+  function handleCardDeleteFromMovie(id, movie) {
+    console.log(savedMovies);
     const currentMovie = savedMovies.filter((c) => {
-      return c.id === movieId;
+      return c.movieId === id;
     });
+    console.log(currentMovie, currentMovie._id);
     mainapi
-      .deleteMovie(currentMovie._id)
+      .deleteMovie(currentMovie[0]._id)
       .then((res) => {
-        const currentMovies = movies.filter((c) => {
+        const currentSavedMovies = savedMovies.filter((c) => {
           return c.id !== movie.id;
         });
-        setMovies(currentMovies);
+        setSavedMovies(currentSavedMovies);
       })
       .catch((err) => {
         console.log(err);
