@@ -38,6 +38,7 @@ function MoviesCard({
     };
     e.preventDefault();
     handleAddMovie(newMovie);
+    
   }
 
   function deleteFromSavedMovie() {

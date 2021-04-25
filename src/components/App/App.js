@@ -15,7 +15,6 @@ import { Route, useHistory } from "react-router-dom";
 import { moviesapi } from "../../utiles/MoviesApi";
 import { mainapi } from "../../utiles/MainApi";
 import ProtectedRoute from "../ProtectedRoute";
-import Preloader from "../Preloader/Preloader";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -28,6 +27,8 @@ function App() {
   const [isLoading, setIsLoading] = React.useState(false);
   const history = useHistory();
   const [isGotResult, setIsGotResult] = React.useState(false);
+  const [registerError, setRegisterError] = React.useState("");
+  const [loginError, setLoginError] = React.useState("");
 
   React.useEffect(() => {
     let jwt = localStorage.getItem("jwt");
@@ -44,7 +45,7 @@ function App() {
       .then((res) => {
         const userMovies = res.data.filter((movie) => {
           return movie.owner === currentUser._id;
-        })
+        });
         setSavedMovies(userMovies);
       })
       .catch((err) => {
@@ -74,8 +75,14 @@ function App() {
       .then((res) => {
         history.push("/movies");
       })
-      .catch(() => {
+      .catch((err) => {
         setLoggedIn(false);
+        if (err === "Error: 409") {
+          setRegisterError("Пользователь с таким email уже существует");
+        }
+        if (err === "Error: 500") {
+          setRegisterError("При регистрации пользователя произошла ошибка");
+        }
       });
   }
 
@@ -91,6 +98,19 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
+        if (err === "Error: 400") {
+          setLoginError("Вы ввели неправильный логин или пароль");
+        }
+        if (err === "Error: 401") {
+          setLoginError(
+            "При авторизации произошла ошибка. Токен не передан или передан не в том формате"
+          );
+        }
+        if (err === "Error: 403") {
+          setLoginError(
+            "При авторизации произошла ошибка. Переданный токен не корректен"
+          );
+        }
       });
   }
 
@@ -224,7 +244,8 @@ function App() {
     mainapi
       .addMovie(movie)
       .then((newMovie) => {
-        setSavedMovies([newMovie, ...savedMovies]);
+        setSavedMovies([newMovie.data, ...savedMovies]);
+        console.log(newMovie, savedMovies);
       })
       .catch((err) => {
         console.log(err);
@@ -328,6 +349,7 @@ function App() {
               savedMovies={savedMovies}
               handleCardDeleteFromMovie={handleCardDeleteFromMovie}
               isGotResult={isGotResult}
+              isLoading={isLoading}
               component={Movies}
             />
             <Footer />
@@ -363,16 +385,15 @@ function App() {
             />
           </Route>
           <Route path="/signup">
-            <Register onRegister={onRegister} />
+            <Register onRegister={onRegister} registerError={registerError} />
           </Route>
           <Route path="/signin">
-            <Login handleLogin={onLogin} />
+            <Login handleLogin={onLogin} loginError={loginError}/>
           </Route>
           <Route path="/error">
             <Error />
           </Route>
         </Switch>
-        {isLoading && <Preloader />}
       </div>
     </CurrentUserContext.Provider>
   );

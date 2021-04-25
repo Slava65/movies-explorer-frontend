@@ -1,6 +1,7 @@
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import React from "react";
+import Preloader from "../Preloader/Preloader";
 
 function Movies({
   isSavedMovies,
@@ -13,10 +14,10 @@ function Movies({
   countmovies,
   savedMovies,
   handleCardDeleteFromMovie,
-  isGotResult
+  isGotResult,
+  isLoading
 }) {
 
- 
   return (
     <div className="movies">
       <SearchForm handleUpdateFindWord={handleUpdateFindWord} movies={movies} />
@@ -33,6 +34,7 @@ function Movies({
           handleCardDeleteFromMovie={handleCardDeleteFromMovie}
         />
       )}
+      {isLoading && <Preloader />}
       {(movies.length === 0 && isGotResult) && (
         <p className="movies__noresult">Ничего не найдено</p>
       )}
