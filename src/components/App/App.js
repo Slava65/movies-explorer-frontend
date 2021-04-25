@@ -27,6 +27,7 @@ function App() {
   const [currentUser, setCurrentUser] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
   const history = useHistory();
+  const [isGotResult, setIsGotResult] = React.useState(false);
 
   React.useEffect(() => {
     let jwt = localStorage.getItem("jwt");
@@ -61,6 +62,10 @@ function App() {
         console.log(err);
       });
   }, [loggedIn]);
+
+  function changeGotResult() {
+    setIsGotResult(true);
+  }
 
   function onRegister(data) {
     const { email, name, password } = data;
@@ -119,6 +124,7 @@ function App() {
           const filteredRes = findMovies(convertedRes, word, isChecked);
           console.log(filteredRes);
           setMovies(filteredRes);
+          changeGotResult();
         }
       })
       .catch((err) => {
@@ -131,6 +137,7 @@ function App() {
     const filteredMovies = findMovies(savedMovies, word, isChecked);
     setSavedMovies(filteredMovies);
     setIsLoading(false);
+    changeGotResult();
   }
 
   function moviesConvert(movies) {
@@ -320,6 +327,7 @@ function App() {
               countmovies={countmovies}
               savedMovies={savedMovies}
               handleCardDeleteFromMovie={handleCardDeleteFromMovie}
+              isGotResult={isGotResult}
               component={Movies}
             />
             <Footer />

@@ -21,7 +21,7 @@ function SearchForm({ handleUpdateFindWord, handleFindSavedMovies, isSavedMovies
     else {
       setIsChecked(false);
     }
-    movies.length > 0 && handleUpdateFindWord(word, isChecked)
+    movies.length > 0 && handleUpdateFindWord(word, isChecked);
   }
 
   return (

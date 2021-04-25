@@ -1,5 +1,6 @@
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
+import React from "react";
 
 function Movies({
   isSavedMovies,
@@ -12,11 +13,14 @@ function Movies({
   countmovies,
   savedMovies,
   handleCardDeleteFromMovie,
+  isGotResult
 }) {
+
+ 
   return (
     <div className="movies">
       <SearchForm handleUpdateFindWord={handleUpdateFindWord} movies={movies} />
-      {(movies.length > 0) && (
+      {movies.length > 0 && (
         <MoviesCardList
           isSavedMovies={isSavedMovies}
           isMovieLike={isMovieLike}
@@ -28,6 +32,9 @@ function Movies({
           savedMovies={savedMovies}
           handleCardDeleteFromMovie={handleCardDeleteFromMovie}
         />
+      )}
+      {(movies.length === 0 && isGotResult) && (
+        <p className="movies__noresult">Ничего не найдено</p>
       )}
     </div>
   );

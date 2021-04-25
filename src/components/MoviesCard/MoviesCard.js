@@ -38,7 +38,6 @@ function MoviesCard({
     };
     e.preventDefault();
     handleAddMovie(newMovie);
-    
   }
 
   function deleteFromSavedMovie() {
@@ -47,7 +46,6 @@ function MoviesCard({
 
   function deleteFromMovie() {
     handleCardDeleteFromMovie(movie.id, movie);
-   
   }
 
   return (
@@ -56,7 +54,7 @@ function MoviesCard({
         <div className="moviescard__header">
           <div className="moviescard__info">
             <h5 className="moviescard__title">{movie.nameRU}</h5>
-            <p className="moviescard__duration">{movie.duration}</p>
+            <p className="moviescard__duration">{`${Math.floor(movie.duration / 60)}ч ${(movie.duration % 60)}м`}</p>
           </div>
           {isSavedMovies && (
             <button
@@ -76,20 +74,6 @@ function MoviesCard({
             }
           ></button>
           )}
-
-
-
-          {/* <button
-            type="button"
-            className={`moviescard__save ${
-              isSavedMovies && "moviescard__save_delete"
-            } ${isSavedMovie && "moviescard__save_active"}`}
-            aria-label="Сохранить"
-            onClick={
-              (isSavedMovie && deleteFromMovie) ||
-              (isSavedMovies ? deleteFromSavedMovie : addMovie)
-            }
-          ></button> */}
         </div>
         <a href={isSavedMovies ? movie.trailer : movie.trailerLink}>
         <img
