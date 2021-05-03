@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
 export default function useFormWithValidation() {
   const [data, setData] = React.useState({
-    email: "",
     name: "",
+    email: "",
     password: "",
   });
   const [errors, setErrors] = React.useState({});

@@ -54,7 +54,7 @@ function App() {
   }, [loggedIn]);
 
   React.useEffect(() => {
-    mainapi
+    return mainapi
       .getInfoUser()
       .then((user) => {
         setCurrentUser(user.data);
@@ -69,9 +69,9 @@ function App() {
   }
 
   function onRegister(data) {
-    const { email, name, password } = data;
+    const { name, email, password } = data;
     return mainapi
-      .register(email, name, password)
+      .register(name, email, password)
       .then((res) => {
         history.push("/movies");
       })
@@ -88,6 +88,7 @@ function App() {
 
   function onLogin(data) {
     const { email, password } = data;
+    console.log(email, password);
     return mainapi
       .authorize(email, password)
       .then((res) => {
@@ -97,7 +98,6 @@ function App() {
         history.push("/movies");
       })
       .catch((err) => {
-        console.log(err);
         if (err === "Error: 400") {
           setLoginError("Вы ввели неправильный логин или пароль");
         }
@@ -115,7 +115,7 @@ function App() {
   }
 
   function tokenCheck(jwt) {
-    mainapi
+    return mainapi
       .getContent(jwt)
       .then((res) => {
         setCurrentUser(res.data);
@@ -388,7 +388,7 @@ function App() {
             <Register onRegister={onRegister} registerError={registerError} />
           </Route>
           <Route path="/signin">
-            <Login handleLogin={onLogin} loginError={loginError}/>
+            <Login handleLogin={onLogin} loginError={loginError} />
           </Route>
           <Route path="/error">
             <Error />

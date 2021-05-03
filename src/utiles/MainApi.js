@@ -46,15 +46,16 @@ class MainApi {
     }).then(this._handleResult);
   }
 
-  register = (email, password, name) => {
+  register = (name, email, password) => {
     return fetch(`${this._url}/signup`, {
       method: "POST",
       headers: this._headers,
-      body: JSON.stringify({ email, password, name }),
+      body: JSON.stringify({ name, email, password }),
     }).then(this._handleResult);
   };
 
   authorize = (email, password) => {
+    console.log(email, password)
     return fetch(`${this._url}/signin`, {
       method: "POST",
       headers: this._headers,
@@ -86,7 +87,7 @@ class MainApi {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("jwt")}`,
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
     }).then(this._handleResult);
   }
@@ -96,7 +97,7 @@ class MainApi {
       method: "PATCH",
       headers: {
         authorization: `Bearer ${localStorage.getItem("jwt")}`,
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ name, email }),
     }).then(this._handleResult);
@@ -104,9 +105,9 @@ class MainApi {
 
   getInfoUser() {
     return fetch(`${this._url}/users/me`, {
-      headers:  {
+      headers: {
         authorization: `Bearer ${localStorage.getItem("jwt")}`,
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
     }).then(this._handleResult);
   }
@@ -115,6 +116,6 @@ class MainApi {
 export const mainapi = new MainApi({
   url: "https://api.slavazdiploma.students.nomoredomains.icu",
   headers: {
-    "Content-Type": "application/json",
+    "Content-Type": "application/json"
   },
 });

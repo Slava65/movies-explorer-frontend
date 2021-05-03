@@ -7,7 +7,7 @@ function Register({ onRegister, registerError }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onRegister(validation.data);
-    console.log(registerError)
+    validation.resetForm();
   };
 
   return (
@@ -28,6 +28,7 @@ function Register({ onRegister, registerError }) {
         name="name"
         onChange={validation.handleChange}
         required
+        minLength="2"
       ></input>
       <label className="register__error">{validation.errors.name}</label>
       <p className="register__data-lable">E-mail</p>
@@ -38,6 +39,7 @@ function Register({ onRegister, registerError }) {
         name="email"
         onChange={validation.handleChange}
         required
+        minLength="2"
       ></input>
       <label className="register__error">{validation.errors.email}</label>
       <p className="register__data-lable">Пароль</p>
@@ -48,6 +50,7 @@ function Register({ onRegister, registerError }) {
         name="password"
         onChange={validation.handleChange}
         required
+        minLength="2"
       ></input>
       <label className="register__error">{validation.errors.password}</label>
       {registerError && (

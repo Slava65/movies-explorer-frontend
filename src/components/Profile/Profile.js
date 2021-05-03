@@ -1,8 +1,8 @@
 import React from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { Link } from "react-router-dom";
-function Profile({ onUpdateUser, onSignOut }) {
 
+function Profile({ onUpdateUser, onSignOut }) {
   const currentUser = React.useContext(CurrentUserContext);
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -27,16 +27,29 @@ function Profile({ onUpdateUser, onSignOut }) {
       name: name,
       email: email,
     });
+  
   }
 
   return (
     <form className="profile" onSubmit={handleSubmitProfile}>
       <h2 className="profile__title">Привет, {currentUser.name}!</h2>
       <div className="profile__data">
-        <input className="profile__name" value={name} onChange={handleChangeName} />
+        <input
+          className="profile__name"
+          value={name}
+          onChange={handleChangeName}
+          required
+          minLength="2"
+        />
         <p className="profile__lable-name">Имя</p>
         <hr className="profile__line"></hr>
-        <input className="profile__email" value={email} onChange={handleChangeEmail} />
+        <input
+          className="profile__email"
+          value={email}
+          onChange={handleChangeEmail}
+          required
+          minLength="2"
+        />
         <p className="profile__lable-mail">Почта</p>
       </div>
       <div className="profile__manage-block">

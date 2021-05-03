@@ -7,6 +7,7 @@ function Login({ handleLogin, loginError }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleLogin(validation.data);
+    console.log(validation.data)
   };
 
   return (
@@ -27,6 +28,7 @@ function Login({ handleLogin, loginError }) {
         name="email"
         onChange={validation.handleChange}
         required
+        minLength="2"
       ></input>
       <label className="login__error">{validation.errors.email}</label>
       <p className="login__data-lable">Пароль</p>
@@ -37,6 +39,7 @@ function Login({ handleLogin, loginError }) {
         name="password"
         onChange={validation.handleChange}
         required
+        minLength="2"
       ></input>
       <label className="login__error">{validation.errors.password}</label>
       {loginError && (
