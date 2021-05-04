@@ -7,7 +7,6 @@ function Login({ handleLogin, loginError }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleLogin(validation.data);
-    console.log(validation.data)
   };
 
   return (

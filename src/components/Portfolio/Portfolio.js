@@ -8,31 +8,37 @@ function Portfolio() {
         <li className="portfolio__item">
           <p className="portfolio__text">
             Статичный сайт
-            <img
-              className="portfolio__icon"
-              src={itemIcon}
-              alt="Стрелка элемента"
-            ></img>
+            <a href="https://github.com/Slava65/how-to-learn">
+              <img
+                className="portfolio__icon"
+                src={itemIcon}
+                alt="Стрелка элемента"
+              ></img>
+            </a>
           </p>
         </li>
         <li className="portfolio__item">
           <p className="portfolio__text">
             Адаптивный сайт
-            <img
-              className="portfolio__icon"
-              src={itemIcon}
-              alt="Стрелка элемента"
-            ></img>
+            <a href="https://github.com/Slava65/russian-travel">
+              <img
+                className="portfolio__icon"
+                src={itemIcon}
+                alt="Стрелка элемента"
+              ></img>
+            </a>
           </p>
         </li>
         <li className="portfolio__item">
           <p className="portfolio__text">
             Одностраничное приложение
-            <img
-              className="portfolio__icon"
-              src={itemIcon}
-              alt="Стрелка элемента"
-            ></img>
+            <a href="https://github.com/Slava65/react-mesto-api-full">
+              <img
+                className="portfolio__icon"
+                src={itemIcon}
+                alt="Стрелка элемента"
+              ></img>
+            </a>
           </p>
         </li>
       </ul>

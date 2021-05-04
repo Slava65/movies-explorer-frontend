@@ -17,7 +17,6 @@ function MoviesCard({
   React.useEffect(() => {
     let isMovieSaved = getIsSaved(movie.id);
     setIsSavedMovie(isMovieSaved);
-    console.log(isMovieSaved)
   }, [savedMovies]);
 
   function addMovie(e) {

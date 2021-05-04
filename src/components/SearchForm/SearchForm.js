@@ -1,7 +1,13 @@
 import React from "react";
 import searchFormIcon from "../../images/search-film-icon.svg";
 
-function SearchForm({ handleUpdateFindWord, handleFindSavedMovies, isSavedMovies, movies }) {
+function SearchForm({
+  handleUpdateFindWord,
+  handleFindSavedMovies,
+  isSavedMovies,
+  movies,
+  savedMovies
+}) {
   const [word, setWord] = React.useState("");
   const [isChecked, setIsChecked] = React.useState(false);
 
@@ -11,17 +17,25 @@ function SearchForm({ handleUpdateFindWord, handleFindSavedMovies, isSavedMovies
 
   function handleSubmit(e) {
     e.preventDefault();
-    isSavedMovies ? handleFindSavedMovies(word, isChecked) : handleUpdateFindWord(word, isChecked);
+    isSavedMovies
+      ? handleFindSavedMovies(word, isChecked)
+      : handleUpdateFindWord(word, isChecked);
   }
+
+  React.useEffect(() => {
+    if (!isSavedMovies && movies.length > 0) {
+      handleUpdateFindWord(word, isChecked);
+    } else if (isSavedMovies && savedMovies.length > 0) {
+      handleFindSavedMovies(word, isChecked)
+    }
+  }, [isChecked]);
 
   function handleTurnCheckbox() {
     if (!isChecked) {
       setIsChecked(true);
-    } 
-    else {
+    } else {
       setIsChecked(false);
     }
-    movies.length > 0 && handleUpdateFindWord(word, isChecked);
   }
 
   return (
@@ -41,7 +55,7 @@ function SearchForm({ handleUpdateFindWord, handleFindSavedMovies, isSavedMovies
       <button type="submit" className="searchform__button">
         Найти
       </button>
-      <div className="searchform__checkbox-block" >
+      <div className="searchform__checkbox-block">
         <input
           type="checkbox"
           className="searchform__checkbox"

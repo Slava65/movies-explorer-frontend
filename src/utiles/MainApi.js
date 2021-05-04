@@ -55,7 +55,6 @@ class MainApi {
   };
 
   authorize = (email, password) => {
-    console.log(email, password)
     return fetch(`${this._url}/signin`, {
       method: "POST",
       headers: this._headers,

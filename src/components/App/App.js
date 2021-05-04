@@ -34,8 +34,6 @@ function App() {
     let jwt = localStorage.getItem("jwt");
     if (jwt) {
       tokenCheck(jwt);
-    } else {
-      history.push("/signin");
     }
   }, []);
 
@@ -88,7 +86,6 @@ function App() {
 
   function onLogin(data) {
     const { email, password } = data;
-    console.log(email, password);
     return mainapi
       .authorize(email, password)
       .then((res) => {
@@ -142,7 +139,6 @@ function App() {
         if (res) {
           const convertedRes = moviesConvert(res);
           const filteredRes = findMovies(convertedRes, word, isChecked);
-          console.log(filteredRes);
           setMovies(filteredRes);
           changeGotResult();
         }
@@ -245,7 +241,6 @@ function App() {
       .addMovie(movie)
       .then((newMovie) => {
         setSavedMovies([newMovie.data, ...savedMovies]);
-        console.log(newMovie, savedMovies);
       })
       .catch((err) => {
         console.log(err);
@@ -267,16 +262,14 @@ function App() {
   }
 
   function handleCardDeleteFromMovie(id, movie) {
-    console.log(savedMovies);
     const currentMovie = savedMovies.filter((c) => {
       return c.movieId === id;
     });
-    console.log(currentMovie, currentMovie._id);
     mainapi
       .deleteMovie(currentMovie[0]._id)
       .then((res) => {
         const currentSavedMovies = savedMovies.filter((c) => {
-          return c.id !== movie.id;
+          return c.movieId !== movie.id;
         });
         setSavedMovies(currentSavedMovies);
       })

@@ -27,7 +27,6 @@ function Profile({ onUpdateUser, onSignOut }) {
       name: name,
       email: email,
     });
-  
   }
 
   return (

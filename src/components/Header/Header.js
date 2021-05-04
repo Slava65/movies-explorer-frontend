@@ -3,9 +3,6 @@ import { Route, Link, Switch } from "react-router-dom";
 import React from "react";
 
 function Header({ isMenuOpen, openMenu, closeMenu, headerToSignIn }) {
-
- 
-
   return (
     <header className="header">
       <Link to={"/"}>
