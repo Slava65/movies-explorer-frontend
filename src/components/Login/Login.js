@@ -28,6 +28,7 @@ function Login({ handleLogin, loginError }) {
         onChange={validation.handleChange}
         required
         minLength="2"
+        pattern="^[^@]+@[^@.]+\.[^@]+$"
       ></input>
       <label className="login__error">{validation.errors.email}</label>
       <p className="login__data-lable">Пароль</p>

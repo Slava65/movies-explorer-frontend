@@ -5,13 +5,14 @@ function MoviesCardList({
   isSavedMovies,
   isMovieLike,
   likeMovieHandle,
-  movies,
+  filteredMovies,
   handleAddMovie,
   handleChangeCountMovies,
   countmovies,
   savedMovies,
   handleCardDelete,
   handleCardDeleteFromMovie,
+  filteredSavedMovies
 }) {
   function getIsSaved(id) {
     const a = savedMovies.filter((movie) => {
@@ -32,7 +33,7 @@ function MoviesCardList({
     <section className="moviescardlist">
       <ul className="moviescardlist__list">
         {!isSavedMovies &&
-          movies
+          filteredMovies
             .filter((movie, id) => id < countmovies)
             .map((movie) => (
               <MoviesCard
@@ -48,7 +49,7 @@ function MoviesCardList({
               />
             ))}
         {isSavedMovies &&
-          savedMovies.map((movie) => (
+          filteredSavedMovies.map((movie) => (
             <MoviesCard
               key={movie._id}
               movie={movie}
@@ -62,8 +63,8 @@ function MoviesCardList({
           ))}
       </ul>
       {!isSavedMovies &&
-        movies.length > countmovies - 3 &&
-        movies.length > countmovies && (
+        filteredMovies.length > countmovies - 3 &&
+        filteredMovies.length > countmovies && (
           <button
             type="button"
             className="moviescardlist__else"

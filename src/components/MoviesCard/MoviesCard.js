@@ -75,7 +75,7 @@ function MoviesCard({
           ></button>
           )}
         </div>
-        <a href={isSavedMovies ? movie.trailer : movie.trailerLink}>
+        <a rel="noopener noreferrer" target="_blank" href={isSavedMovies ? movie.trailer : movie.trailerLink}>
         <img
           className="moviescard__image"
           alt={movie.nameRU}

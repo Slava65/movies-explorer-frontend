@@ -7,7 +7,7 @@ function Movies({
   isSavedMovies,
   isMovieLike,
   likeMovieHandle,
-  movies,
+  filteredMovies,
   handleUpdateFindWord,
   handleAddMovie,
   handleChangeCountMovies,
@@ -20,22 +20,22 @@ function Movies({
 
   return (
     <div className="movies">
-      <SearchForm handleUpdateFindWord={handleUpdateFindWord} movies={movies} />
-      {movies.length > 0 && (
-        <MoviesCardList
+      <SearchForm handleUpdateFindWord={handleUpdateFindWord} filteredMovies={filteredMovies} />
+      {filteredMovies.length > 0 && (
+        isGotResult && (<MoviesCardList
           isSavedMovies={isSavedMovies}
           isMovieLike={isMovieLike}
           likeMovieHandle={likeMovieHandle}
-          movies={movies}
+          filteredMovies={filteredMovies}
           handleAddMovie={handleAddMovie}
           handleChangeCountMovies={handleChangeCountMovies}
           countmovies={countmovies}
           savedMovies={savedMovies}
           handleCardDeleteFromMovie={handleCardDeleteFromMovie}
-        />
+        />)
       )}
       {isLoading && <Preloader />}
-      {(movies.length === 0 && isGotResult) && (
+      {(filteredMovies.length === 0 && isGotResult) && (
         <p className="movies__noresult">Ничего не найдено</p>
       )}
     </div>

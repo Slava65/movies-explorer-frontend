@@ -20,7 +20,9 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMovieLike, setIsMovieLike] = React.useState(false);
   const [movies, setMovies] = React.useState([]);
+  const [filteredMovies, setFilteredMovies] = React.useState([]);
   const [savedMovies, setSavedMovies] = React.useState([]);
+  const [filteredSavedMovies, setFilteredSavedMovies] = React.useState([]);
   const [countmovies, setCountmovies] = React.useState(3);
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState("");
@@ -29,6 +31,7 @@ function App() {
   const [isGotResult, setIsGotResult] = React.useState(false);
   const [registerError, setRegisterError] = React.useState("");
   const [loginError, setLoginError] = React.useState("");
+  const [isSuccessUpdateUser, setIsSuccessUpdateUser] = React.useState(false);
 
   React.useEffect(() => {
     let jwt = localStorage.getItem("jwt");
@@ -38,6 +41,18 @@ function App() {
   }, []);
 
   React.useEffect(() => {
+    moviesapi
+      .getInitialMovies()
+      .then((res) => {
+        const convertedRes = moviesConvert(res);
+        setMovies(convertedRes);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [loggedIn]);
+
+  React.useEffect(() => {
     mainapi
       .getInitialMovies()
       .then((res) => {
@@ -45,6 +60,7 @@ function App() {
           return movie.owner === currentUser._id;
         });
         setSavedMovies(userMovies);
+        setFilteredSavedMovies(userMovies);
       })
       .catch((err) => {
         console.log(err);
@@ -92,7 +108,7 @@ function App() {
         let jwt = res.token;
         tokenCheck(jwt);
         localStorage.setItem("jwt", jwt);
-        history.push("/movies");
+        history.push("/");
       })
       .catch((err) => {
         if (err === "Error: 400") {
@@ -117,11 +133,11 @@ function App() {
       .then((res) => {
         setCurrentUser(res.data);
         setLoggedIn(true);
-        history.push("/movies");
+        history.push("/");
       })
       .catch(() => {
         localStorage.removeItem("jwt", jwt);
-        history.push("/signin");
+        history.push("/");
       });
   }
 
@@ -132,26 +148,16 @@ function App() {
 
   function handleUpdateFindWord(word, isChecked) {
     setIsLoading(true);
-    moviesapi
-      .getInitialMovies()
-      .then((res) => {
-        setIsLoading(false);
-        if (res) {
-          const convertedRes = moviesConvert(res);
-          const filteredRes = findMovies(convertedRes, word, isChecked);
-          setMovies(filteredRes);
-          changeGotResult();
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    const filteredRes = findMovies(movies, word, isChecked);
+    setFilteredMovies(filteredRes);
+    setIsLoading(false);
+    changeGotResult();
   }
 
   function handleFindSavedMovies(word, isChecked) {
     setIsLoading(true);
     const filteredMovies = findMovies(savedMovies, word, isChecked);
-    setSavedMovies(filteredMovies);
+    setFilteredSavedMovies(filteredMovies);
     setIsLoading(false);
     changeGotResult();
   }
@@ -241,6 +247,7 @@ function App() {
       .addMovie(movie)
       .then((newMovie) => {
         setSavedMovies([newMovie.data, ...savedMovies]);
+        setFilteredSavedMovies([newMovie.data, ...filteredSavedMovies]);
       })
       .catch((err) => {
         console.log(err);
@@ -255,6 +262,10 @@ function App() {
           return c._id !== movie._id;
         });
         setSavedMovies(currentSavedMovies);
+        const currentFilteredSavedMovies = filteredSavedMovies.filter((c) => {
+          return c._id !== movie._id;
+        });
+        setFilteredSavedMovies(currentFilteredSavedMovies);
       })
       .catch((err) => {
         console.log(err);
@@ -283,6 +294,7 @@ function App() {
       .updateUser(newData)
       .then((info) => {
         setCurrentUser(info.user);
+        setIsSuccessUpdateUser(true);
       })
       .catch((err) => {
         console.log(err);
@@ -312,6 +324,7 @@ function App() {
   function onSignOut() {
     localStorage.removeItem("jwt");
     history.push("/signin");
+    setLoggedIn(false);
   }
 
   return (
@@ -319,7 +332,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/">
-            <Header headerToSignIn={headerToSignIn} />
+            <Header headerToSignIn={headerToSignIn} loggedIn={loggedIn} />
             <Main />
             <Footer />
           </Route>
@@ -334,7 +347,7 @@ function App() {
               isSavedMovies={false}
               isMovieLike={isMovieLike}
               likeMovieHandle={likeMovieHandle}
-              movies={movies}
+              filteredMovies={filteredMovies}
               handleUpdateFindWord={handleUpdateFindWord}
               handleAddMovie={handleAddMovie}
               handleChangeCountMovies={handleChangeCountMovies}
@@ -360,6 +373,9 @@ function App() {
               handleUpdateFindWord={handleUpdateFindWord}
               handleCardDelete={handleCardDelete}
               handleFindSavedMovies={handleFindSavedMovies}
+              filteredSavedMovies={filteredSavedMovies}
+              isLoading={isLoading}
+              isGotResult={isGotResult}
               component={SavedMovies}
             />
             <Footer />
@@ -374,6 +390,7 @@ function App() {
               loggedIn={loggedIn}
               onUpdateUser={onUpdateUser}
               onSignOut={onSignOut}
+              isSuccessUpdateUser={isSuccessUpdateUser}
               component={Profile}
             />
           </Route>
@@ -383,7 +400,7 @@ function App() {
           <Route path="/signin">
             <Login handleLogin={onLogin} loginError={loginError} />
           </Route>
-          <Route path="/error">
+          <Route path="*">
             <Error />
           </Route>
         </Switch>
