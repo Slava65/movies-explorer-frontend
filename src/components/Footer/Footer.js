@@ -7,7 +7,7 @@ function Footer() {
         Учебный проект Яндекс.Практикум х BeatFilm.
       </h5>
       <hr className="footer__line"></hr>
-      <div class="footer__menu-block">
+      <div className="footer__menu-block">
         <p className="footer__year">&copy; 2020</p>
         <nav className="footer__menu">
           <Link to={"https://praktikum.yandex.ru/"} className="footer__link">

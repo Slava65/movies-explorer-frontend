@@ -1,6 +1,6 @@
 .login {
   width: 396px;
-  height: 560px;
+  min-height: 560px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +21,7 @@
 .login__logo {
   width: 38px;
   height: 38px;
-  background-image: url("../../images/header_logo.png");
+  background-image: url("../../images/header_logo.svg");
   border: none;
   background-size: contain;
   background-color: #ffffff;
@@ -64,14 +64,10 @@
   font-size: 13px;
   line-height: 16px;
   padding: 0;
-  margin-bottom: 20px;
-}
-
-.login__data:last-of-type {
   margin-bottom: 10px;
 }
 
-.login__data_password {
+.login__data_active {
   color: #ee3465;
 }
 
@@ -83,8 +79,12 @@
   font-size: 10px;
   line-height: 12px;
   color: #ee3465;
-  margin-bottom: 160px;
+  margin-bottom: 10px;
   align-self: flex-start;
+}
+
+.login__error:last-of-type {
+  margin-bottom: 160px;
 }
 
 .login__finish {
@@ -95,11 +95,16 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  color: #ffffff;
-  background-color: #ff6838;
+  color: #c2c2c2;
+  background-color: #f8f8f8;
   margin-bottom: 16px;
   border: none;
   border-radius: 3px;
+}
+
+.login__finish_active {
+  color: #ffffff;
+  background-color: #ff6838;
 }
 
 .login__finish:hover {
@@ -119,7 +124,7 @@
 }
 
 .login__register-text_signup {
-  color: #3456F3;
+  color: #3456f3;
   margin-left: 6px;
 }
 

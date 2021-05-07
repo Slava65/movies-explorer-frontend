@@ -1,93 +1,80 @@
 import React from "react";
 import MoviesCard from "../MoviesCard/MoviesCard";
-import examplePicture from "../../images/movies-card-example.jpg";
-const movie = {
-  nameRU: "33 слова о дизайне",
-  duration: "1ч 47м",
-  url: examplePicture,
-};
 
-function MoviesCardList({ isSavedMovies, isMovieLike, likeMovieHandle }) {
+function MoviesCardList({
+  isSavedMovies,
+  isMovieLike,
+  likeMovieHandle,
+  filteredMovies,
+  handleAddMovie,
+  handleChangeCountMovies,
+  countmovies,
+  savedMovies,
+  handleCardDelete,
+  handleCardDeleteFromMovie,
+  filteredSavedMovies
+}) {
+  function getIsSaved(id) {
+    const a = savedMovies.filter((movie) => {
+      return movie.movieId === id;
+    });
+    if (a.length === 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  function addMovies() {
+    handleChangeCountMovies(countmovies);
+  }
+
   return (
-    <moviescardlist class="moviescardlist">
+    <section className="moviescardlist">
       <ul className="moviescardlist__list">
-        <MoviesCard
-          movie={movie}
-          isSavedMovies={isSavedMovies}
-          isMovieLike={isMovieLike}
-          likeMovieHandle={likeMovieHandle}
-        />
-        <MoviesCard
-          movie={movie}
-          isSavedMovies={isSavedMovies}
-          isMovieLike={isMovieLike}
-          likeMovieHandle={likeMovieHandle}
-        />
-        <MoviesCard
-          movie={movie}
-          isSavedMovies={isSavedMovies}
-          isMovieLike={isMovieLike}
-          likeMovieHandle={likeMovieHandle}
-        />
-        <MoviesCard
-          movie={movie}
-          isSavedMovies={isSavedMovies}
-          isMovieLike={isMovieLike}
-          likeMovieHandle={likeMovieHandle}
-        />
-        <MoviesCard
-          movie={movie}
-          isSavedMovies={isSavedMovies}
-          isMovieLike={isMovieLike}
-          likeMovieHandle={likeMovieHandle}
-        />
-        <MoviesCard
-          movie={movie}
-          isSavedMovies={isSavedMovies}
-          isMovieLike={isMovieLike}
-          likeMovieHandle={likeMovieHandle}
-        />
-        <MoviesCard
-          movie={movie}
-          isSavedMovies={isSavedMovies}
-          isMovieLike={isMovieLike}
-          likeMovieHandle={likeMovieHandle}
-        />
-        <MoviesCard
-          movie={movie}
-          isSavedMovies={isSavedMovies}
-          isMovieLike={isMovieLike}
-          likeMovieHandle={likeMovieHandle}
-        />
-        <MoviesCard
-          movie={movie}
-          isSavedMovies={isSavedMovies}
-          isMovieLike={isMovieLike}
-          likeMovieHandle={likeMovieHandle}
-        />
-        <MoviesCard
-          movie={movie}
-          isSavedMovies={isSavedMovies}
-          isMovieLike={isMovieLike}
-          likeMovieHandle={likeMovieHandle}
-        />
-        <MoviesCard
-          movie={movie}
-          isSavedMovies={isSavedMovies}
-          isMovieLike={isMovieLike}
-          likeMovieHandle={likeMovieHandle}
-        />
-        <MoviesCard
-          movie={movie}
-          isSavedMovies={isSavedMovies}
-          isMovieLike={isMovieLike}
-          likeMovieHandle={likeMovieHandle}
-        />
+        {!isSavedMovies &&
+          filteredMovies
+            .filter((movie, id) => id < countmovies)
+            .map((movie) => (
+              <MoviesCard
+                key={movie._id}
+                movie={movie}
+                isSavedMovies={isSavedMovies}
+                isMovieLike={isMovieLike}
+                likeMovieHandle={likeMovieHandle}
+                handleAddMovie={handleAddMovie}
+                getIsSaved={getIsSaved}
+                handleCardDeleteFromMovie={handleCardDeleteFromMovie}
+                savedMovies={savedMovies}
+              />
+            ))}
+        {isSavedMovies &&
+          filteredSavedMovies.map((movie) => (
+            <MoviesCard
+              key={movie._id}
+              movie={movie}
+              isSavedMovies={isSavedMovies}
+              isMovieLike={isMovieLike}
+              likeMovieHandle={likeMovieHandle}
+              handleAddMovie={handleAddMovie}
+              handleCardDelete={handleCardDelete}
+              getIsSaved={getIsSaved}
+            />
+          ))}
       </ul>
-      <button type="button" className="moviescardlist__else" aria-label="Еще">
-        Еще
-      </button>
-    </moviescardlist>
+      {!isSavedMovies &&
+        filteredMovies.length > countmovies - 3 &&
+        filteredMovies.length > countmovies && (
+          <button
+            type="button"
+            className="moviescardlist__else"
+            aria-label="Еще"
+            onClick={addMovies}
+          >
+            Еще
+          </button>
+        )}
+    </section>
   );
 }
 
