@@ -9,22 +9,14 @@ function AboutMe() {
       <hr className="aboutme__line"></hr>
       <img className="aboutme__myfoto" src={myFoto} alt="Мое фото"></img>
       <p className="aboutme__name">Вячеслав</p>
-      <p className="aboutme__profession">Фронтенд-разработчик, 32 года</p>
-      <p className="aboutme__description">
-        Я родился в городе Корсаков Сахалинской области. Живу в городе
-        Южно-Сахалинске. Я закончил в 2010 году факультет экономики ДВФУ по
-        специальности "Прикладная информатика в экономике". Я люблю смотреть
-        фильмы, а ещё увлекаюсь пешими и велосипедными прогулками. Более 10 лет
-        работаю в банковской сфере. Хочу вернуться в сферу IT-технологий. Почти
-        год изучаю веб-разработку на Яндекс-Практикуме.
-      </p>
+      <p className="aboutme__profession">Фронтенд-разработчик</p>
       <nav className="aboutme__menu">
-        <Link to={"https://vk.com/slava_sakh"} className="aboutme__link">
-          Вконтакте
-        </Link>
-        <Link to={"https://github.com/Slava65"} className="aboutme__link">
+        <a href={"https://t.me/CJLaBa7"} className="aboutme__link">
+          Telegram
+        </a>
+        <a href={"https://github.com/Slava65"} className="aboutme__link">
           Github
-        </Link>
+        </a>
       </nav>
       <Portfolio />
     </section>

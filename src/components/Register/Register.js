@@ -31,7 +31,7 @@ function Register({ onRegister, registerError }) {
         onChange={validation.handleChange}
         required
         minLength="2"
-        pattern="[A-Za-zА-Яа-яЁё\s-]+$"
+        pattern="[A-Za-zА-Яа-яЁё\s]+$"
       ></input>
       <label className="register__error">{validation.errors.name}</label>
       <p className="register__data-lable">E-mail</p>

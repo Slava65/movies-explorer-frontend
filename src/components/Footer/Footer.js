@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 function Footer() {
   return (
     <footer className="footer">
@@ -8,17 +6,17 @@ function Footer() {
       </h5>
       <hr className="footer__line"></hr>
       <div className="footer__menu-block">
-        <p className="footer__year">&copy; 2020</p>
+        <p className="footer__year">&copy; 2023</p>
         <nav className="footer__menu">
-          <Link to={"https://praktikum.yandex.ru/"} className="footer__link">
+          <a href={"https://praktikum.yandex.ru/"} className="footer__link">
             Яндекс.Практикум
-          </Link>
-          <Link to={"https://github.com/Slava65"} className="footer__link">
+          </a>
+          <a href={"https://github.com/Slava65"} className="footer__link">
             Github
-          </Link>
-          <Link to={"https://vk.com/slava_sakh"} className="footer__link">
-            Вконтакте
-          </Link>
+          </a>
+          <a href={"https://t.me/CJLaBa7"} className="footer__link">
+            Telegram
+          </a>
         </nav>
       </div>
     </footer>

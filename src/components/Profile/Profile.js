@@ -14,7 +14,6 @@ function Profile({ onUpdateUser, onSignOut, isSuccessUpdateUser }) {
   React.useEffect(() => {
     const userName = currentUser.name;
     const userEmail = currentUser.email;
-    console.log(userName, userEmail);
     setData({ name: userName, email: userEmail });
   }, []);
 
@@ -49,7 +48,7 @@ function Profile({ onUpdateUser, onSignOut, isSuccessUpdateUser }) {
           onChange={handleChange}
           required
           minLength="2"
-          pattern="[A-Za-zА-Яа-яЁё\s-]+$"
+          pattern="[A-Za-zА-Яа-яЁё\s]+$"
         />
         <label className="register__error">{errors.name}</label>
         <p className="profile__lable-name">Имя</p>

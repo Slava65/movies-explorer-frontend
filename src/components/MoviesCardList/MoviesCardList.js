@@ -37,7 +37,7 @@ function MoviesCardList({
             .filter((movie, id) => id < countmovies)
             .map((movie) => (
               <MoviesCard
-                key={movie._id}
+                key={movie.id}
                 movie={movie}
                 isSavedMovies={isSavedMovies}
                 isMovieLike={isMovieLike}

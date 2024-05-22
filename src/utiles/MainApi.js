@@ -113,7 +113,7 @@ class MainApi {
 }
 
 export const mainapi = new MainApi({
-  url: "https://api.slavazdiploma.students.nomoredomains.icu",
+  url: "http://localhost:3001",
   headers: {
     "Content-Type": "application/json"
   },

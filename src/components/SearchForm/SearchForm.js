@@ -27,7 +27,7 @@ function SearchForm({
   React.useEffect(() => {
     if (!isSavedMovies && filteredMovies.length > 0) {
       handleUpdateFindWord(word, isChecked);
-    } else if (isSavedMovies && filteredSavedMovies.length > 0) {
+    } else if (isSavedMovies) {
       handleFindSavedMovies(word, isChecked);
     }
   }, [isChecked]);
@@ -48,7 +48,7 @@ function SearchForm({
         placeholder="Фильм"
         value={word}
         onChange={handleChangeWord}
-        pattern="[A-Za-zА-Яа-яЁё\s-]{1,}"
+        pattern="[A-Za-zА-Яа-яЁё\s]{1,}"
       ></input>
       {!isValid && (
         <label className="searchform__error">
