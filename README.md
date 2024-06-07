@@ -41,6 +41,6 @@
 <img src="/public/readme_pic_techs/mongodb.svg" width="110" height="110" alt="MongoDB">
 </div>
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=1843FF&background=3DFF4622&vCenter=true&random=false&width=750&lines=JavaScript+React+HTML+CSS+NodeJS+%D0%91%D0%AD%D0%9C+MongoDB+)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=1843FF&background=3DFF4622&vCenter=true&random=false&width=800&lines=JavaScript+React+HTML+CSS+NodeJS+%D0%91%D0%AD%D0%9C+MongoDB+)](https://git.io/typing-svg)
 
 
