@@ -1,23 +1,45 @@
-# movies-explorer-frontend
-## Описание проекта 
+# Movies Explorer Frontend
+## О проекте
  
-Данный проект предназначен для  
-самостоятельной разработки фронтенд части проекта movies-explorer
- 
+Данный проект является реализацией фронтенд-части веб-приложения Movies Explorer. Он позволяет просматривать видеоролики, предоставляемые внешним сервисом и сохранять их в избранном. Проект реализован  с помощью библиотеки React. Используются функциональные компоненты, хуки, контекст, high order component.
+
+## Описание проекта
+
+Главная страница проекта Movies Explorer Frontend содержит общую информацию о проекте и его создателе. 
+
+![Alt text](/public/readme_pic_about.png?raw=true "О проекте")
+
+Для перехода к просмотру видеороликов необходимо зарегистрироваться и войти. Соответствующая кнопка находится в главном меню сверху. 
+
+![Alt text](/public/readme_pic_registration.png?raw=true "Окно регистрации")
+
+Профиль пользователя в дальнейшем можно редактировать.
+
+![Alt text](/public/readme_pic_edit_profile.png?raw=true "Окно регистрации")
+
+В проекте Movies Explorer Frontend настроено подключение к сервису BeatfilmMovies через его API для получения видеороликов с помощью поиска.
+
+![Alt text](/public/readme_pic_search.png?raw=true "Поиск видеороликов")
+
+Можно отфильтровать видео по длительности с помощью переключателя "Короткометражки"
+
+![Alt text](/public/readme_pic_short.png?raw=true "Короткометражки")
+
+Также Movies Explorer Frontend имеет собственный API, реализованный в проекте https://github.com/Slava65/movies-explorer-api. Данный API реализует функционал регистрации пользователя, упомянутый выше, и сохранения видеороликов в избранном. Этот список доступен с помощью кнопки "Сохраненные фильмы". Видео также можно удалить из списка с помощью соответствующей кнопки.
+
+![Alt text](/public/readme_pic_saved.png?raw=true "Сохраненные фильмы")
+
 ## Используемые технологии 
-1. HTML. 
-2. CSS. 
-3. БЭМ. 
-4. Git. 
+1. JavaScript. 
+2. React. 
+3. HTML.  
+4. CSS.
 5. Flex. 
 6. Grid. 
-7. JavaScript. 
-8. ООП.
-9. Node.js.
+7. Node.js.
+8. Hooks.
+9. БЭМ-нотация.
 10. MongoDB.
 11. Regular Expression.
-12. React
-13. Хуки
-14. JSX
-15. HOC 
-Ссылка на проект:   https://slavazdiploma.students.nomoredomains.icu
+12. HOC.
+
