@@ -40,12 +40,7 @@
 <img src="/public/readme_pic_techs/bem.svg" width="100" height="100" alt="BEM">
 <img src="/public/readme_pic_techs/mongodb.svg" width="100" height="100" alt="MongoDB">
 </div>
-1. JavaScript. 
-2. React. 
-3. HTML.  
-4. CSS.
-5. Node.js.
-6. БЭМ.
-7. MongoDB.
+
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=9C47F7&background=42EB1C12&vCenter=true&random=false&width=435&lines=JavaScript+React+HTML+CSS+NodeJS+%D0%91%D0%AD%D0%9C+MongoDB+)](https://git.io/typing-svg)
 
 
