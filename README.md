@@ -1,6 +1,5 @@
-[![Readme Quotes](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark)](https://github.com/piyushsuthar/github-readme-quotes)
-
 # Movies Explorer Frontend
+
 ## О проекте
  
 Данный проект является реализацией фронтенд-части веб-приложения Movies Explorer. Он позволяет просматривать видеоролики, предоставляемые внешним сервисом и сохранять их в избранном. Проект реализован  с помощью библиотеки React с применением методологии БЭМ. Используются функциональные компоненты, хуки, контекст, high order component.
