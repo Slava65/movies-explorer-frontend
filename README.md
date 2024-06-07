@@ -31,13 +31,13 @@
 
 ## Используемые технологии 
 
-<img src="/public/readme_pic_techs/javascript.svg" alt="JavaScript">
-<img src="/public/readme_pic_techs/react.svg" alt="React">
-<img src="/public/readme_pic_techs/html5.svg" alt="HTML">
-<img src="/public/readme_pic_techs/css3.svg" alt="CSS">
-<img src="/public/readme_pic_techs/nodedotjs.svg" alt="NodeJS">
-<img src="/public/readme_pic_techs/bem.svg" alt="BEM">
-<img src="/public/readme_pic_techs/mongodb.svg" alt="MongoDB">
+<img src="/public/readme_pic_techs/javascript.svg" width="100" height="100" alt="JavaScript">
+<img src="/public/readme_pic_techs/react.svg" width="100" height="100" alt="React">
+<img src="/public/readme_pic_techs/html5.svg" width="100" height="100" alt="HTML">
+<img src="/public/readme_pic_techs/css3.svg" width="100" height="100" alt="CSS">
+<img src="/public/readme_pic_techs/nodedotjs.svg" width="100" height="100" alt="NodeJS">
+<img src="/public/readme_pic_techs/bem.svg" width="100" height="100" alt="BEM">
+<img src="/public/readme_pic_techs/mongodb.svg" width="100" height="100" alt="MongoDB">
 
 1. JavaScript. 
 2. React. 
