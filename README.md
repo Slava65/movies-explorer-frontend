@@ -43,4 +43,4 @@
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=1843FF&background=3DFF4622&vCenter=true&random=false&width=800&lines=JavaScript+React+HTML+CSS+NodeJS+%D0%91%D0%AD%D0%9C+MongoDB+)](https://git.io/typing-svg)
 
-[![GitHub Streak](https://streak-stats.demolab.com/?user=Slava65)](https://git.io/streak-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
