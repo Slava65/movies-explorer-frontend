@@ -5,25 +5,37 @@
 
 ## Описание проекта
 
+### Главная страница
+
 Главная страница проекта Movies Explorer Frontend содержит общую информацию о проекте и его создателе. 
 
 ![Alt text](/public/readme_pic_about.png?raw=true "О проекте")
+
+### Регистрация
 
 Для перехода к просмотру видеороликов необходимо зарегистрироваться и войти. Соответствующая кнопка находится в главном меню сверху. 
 
 ![Alt text](/public/readme_pic_registration.png?raw=true "Окно регистрации")
 
+### Профиль пользователя
+
 Профиль пользователя в дальнейшем можно редактировать.
 
 ![Alt text](/public/readme_pic_edit_profile.png?raw=true "Редактирование профиля пользователя")
+
+### Поиск видео
 
 В проекте Movies Explorer Frontend настроено подключение к сервису BeatfilmMovies через его API для получения видеороликов с помощью поиска.
 
 ![Alt text](/public/readme_pic_search.png?raw=true "Поиск видеороликов")
 
+### Фильтрация короткометражек
+
 Можно отфильтровать видео по длительности с помощью переключателя "Короткометражки"
 
 ![Alt text](/public/readme_pic_short.png?raw=true "Короткометражки")
+
+### Сохранение видео
 
 Также Movies Explorer Frontend имеет собственный API, реализованный в проекте https://github.com/Slava65/movies-explorer-api. Данный API реализует функционал регистрации пользователя, упомянутый выше, и сохранения видеороликов в избранном. Этот список доступен с помощью кнопки "Сохраненные фильмы". Видео также можно удалить из списка с помощью соответствующей кнопки.
 
@@ -43,4 +55,4 @@
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=1843FF&background=3DFF4622&vCenter=true&random=false&width=800&lines=JavaScript+React+HTML+CSS+NodeJS+%D0%91%D0%AD%D0%9C+MongoDB+)](https://git.io/typing-svg)
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Slava65&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Slava65&layout=compact&custom_title=My_languages&locale=ru)](https://github.com/anuraghazra/github-readme-stats)
