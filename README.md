@@ -32,15 +32,15 @@
 ## Используемые технологии 
 
 <div display="flex" flex-direction="row" justify-content="space-between" width="100%">
-<img src="/public/readme_pic_techs/javascript.svg" width="120" height="120" alt="JavaScript">
-<img src="/public/readme_pic_techs/react.svg" width="120" height="120" alt="React">
-<img src="/public/readme_pic_techs/html5.svg" width="120" height="120" alt="HTML">
-<img src="/public/readme_pic_techs/css3.svg" width="120" height="120" alt="CSS">
-<img src="/public/readme_pic_techs/nodedotjs.svg" width="120" height="120" alt="NodeJS">
-<img src="/public/readme_pic_techs/bem.svg" width="120" height="120" alt="BEM">
-<img src="/public/readme_pic_techs/mongodb.svg" width="120" height="120" alt="MongoDB">
+<img src="/public/readme_pic_techs/javascript.svg" width="115" height="115" alt="JavaScript">
+<img src="/public/readme_pic_techs/react.svg" width="115" height="115" alt="React">
+<img src="/public/readme_pic_techs/html5.svg" width="115" height="115" alt="HTML">
+<img src="/public/readme_pic_techs/css3.svg" width="115" height="115" alt="CSS">
+<img src="/public/readme_pic_techs/nodedotjs.svg" width="115" height="115" alt="NodeJS">
+<img src="/public/readme_pic_techs/bem.svg" width="115" height="115" alt="BEM">
+<img src="/public/readme_pic_techs/mongodb.svg" width="115" height="115" alt="MongoDB">
 </div>
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=1843FF&background=3DFF4622&vCenter=true&random=false&width=600&lines=JavaScript+React+HTML+CSS+NodeJS+%D0%91%D0%AD%D0%9C+MongoDB+)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=1843FF&background=3DFF4622&vCenter=true&random=false&width=750&lines=JavaScript+React+HTML+CSS+NodeJS+%D0%91%D0%AD%D0%9C+MongoDB+)](https://git.io/typing-svg)
 
 
