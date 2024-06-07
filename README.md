@@ -65,5 +65,5 @@
 
 [![My LeetCode stats](https://leetcode-stats-six.vercel.app/api?username=Tuzenbobel)](https://github.com/Tuzenbobel/leetcode-stats)
 
-[![My StackOverflow](https://github-readme-stackoverflow.vercel.app/?userID=455668)](https://ru.stackoverflow.com/users/455668/slava65) 
+<a href="https://ru.stackoverflow.com/users/455668/slava65"><img src="https://ru.stackoverflow.com/users/flair/455668.png" width="208" height="58" alt="Профиль участника Slava65 на сайте &#171;Stack Overflow на русском&#187;, Вопросы и ответы для программистов" title="Профиль участника Slava65 на сайте &#171;Stack Overflow на русском&#187;, Вопросы и ответы для программистов"></a>
 
