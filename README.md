@@ -43,7 +43,7 @@
 
 ## Используемые технологии 
 
-<div display="flex" flex-direction="row" justify-content="space-between" width="100%">
+<div display="flex" justify-content="space-between" width="100%">
 <img src="/public/readme_pic_techs/javascript.svg" width="110" height="110" alt="JavaScript">
 <img src="/public/readme_pic_techs/react.svg" width="110" height="110" alt="React">
 <img src="/public/readme_pic_techs/html5.svg" width="110" height="110" alt="HTML">
@@ -55,4 +55,8 @@
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=1843FF&background=3DFF4622&vCenter=true&random=false&width=800&lines=JavaScript+React+HTML+CSS+NodeJS+%D0%91%D0%AD%D0%9C+MongoDB+)](https://git.io/typing-svg)
 
+<div display="flex" justify-content="space-between" width="100%">
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Slava65&layout=compact&custom_title=Используемые_языки&locale=ru)](https://github.com/anuraghazra/github-readme-stats)
+
+[![codewars](https://www.codewars.com/users/SuperPowerMan/badges/micro)](https://www.codewars.com/users/SuperPowerMan)
+</div>
