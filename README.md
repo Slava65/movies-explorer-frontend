@@ -1,7 +1,7 @@
 # Movies Explorer Frontend
 ## О проекте
  
-Данный проект является реализацией фронтенд-части веб-приложения Movies Explorer. Он позволяет просматривать видеоролики, предоставляемые внешним сервисом и сохранять их в избранном. Проект реализован  с помощью библиотеки React. Используются функциональные компоненты, хуки, контекст, high order component.
+Данный проект является реализацией фронтенд-части веб-приложения Movies Explorer. Он позволяет просматривать видеоролики, предоставляемые внешним сервисом и сохранять их в избранном. Проект реализован  с помощью библиотеки React с применением методологии БЭМ. Используются функциональные компоненты, хуки, контекст, high order component.
 
 ## Описание проекта
 
@@ -15,7 +15,7 @@
 
 Профиль пользователя в дальнейшем можно редактировать.
 
-![Alt text](/public/readme_pic_edit_profile.png?raw=true "Окно регистрации")
+![Alt text](/public/readme_pic_edit_profile.png?raw=true "Редактирование профиля пользователя")
 
 В проекте Movies Explorer Frontend настроено подключение к сервису BeatfilmMovies через его API для получения видеороликов с помощью поиска.
 
@@ -30,16 +30,21 @@
 ![Alt text](/public/readme_pic_saved.png?raw=true "Сохраненные фильмы")
 
 ## Используемые технологии 
+
+<img src="/public/readme_pic_techs/javascript.svg" alt="JavaScript">
+<img src="/public/readme_pic_techs/react.svg" alt="React">
+<img src="/public/readme_pic_techs/html5.svg" alt="HTML">
+<img src="/public/readme_pic_techs/css3.svg" alt="CSS">
+<img src="/public/readme_pic_techs/nodedotjs.svg" alt="NodeJS">
+<img src="/public/readme_pic_techs/bem.svg" alt="BEM">
+<img src="/public/readme_pic_techs/mongodb.svg" alt="MongoDB">
+
 1. JavaScript. 
 2. React. 
 3. HTML.  
 4. CSS.
-5. Flex. 
-6. Grid. 
-7. Node.js.
-8. Hooks.
-9. БЭМ-нотация.
-10. MongoDB.
-11. Regular Expression.
-12. HOC.
+5. Node.js.
+6. БЭМ.
+7. MongoDB.
+
 
