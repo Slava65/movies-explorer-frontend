@@ -55,15 +55,20 @@
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=1843FF&background=3DFF4622&vCenter=true&random=false&width=800&lines=JavaScript+React+HTML+CSS+NodeJS+%D0%91%D0%AD%D0%9C+MongoDB+)](https://git.io/typing-svg)
 
-## Статистика используемых языков во всех моих проектах
+## Моя статистика
+
+### Статистика используемых языков во всех моих проектах
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Slava65&layout=compact&custom_title=Используемые_языки&locale=ru)](https://github.com/anuraghazra/github-readme-stats)
 
-## Статистика моего участия в учебных онлайн-платформах и профессиональных форумах
+### Статистика моего участия в учебных онлайн-платформах и профессиональных форумах
 
+_Codewars_
 [![codewars](https://www.codewars.com/users/SuperPowerMan/badges/large)](https://www.codewars.com/users/SuperPowerMan)
 
+_LeetCode_
 [![My LeetCode stats](https://leetcode-stats-six.vercel.app/api?username=Tuzenbobel)](https://github.com/Tuzenbobel/leetcode-stats)
 
+_StackOverflow_
 <a href="https://ru.stackoverflow.com/users/455668/slava65"><img src="https://ru.stackoverflow.com/users/flair/455668.png" width="208" height="58" alt="Профиль участника Slava65 на сайте &#171;Stack Overflow на русском&#187;, Вопросы и ответы для программистов" title="Профиль участника Slava65 на сайте &#171;Stack Overflow на русском&#187;, Вопросы и ответы для программистов"></a>
 
