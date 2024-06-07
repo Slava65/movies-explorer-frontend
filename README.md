@@ -55,7 +55,15 @@
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=1843FF&background=3DFF4622&vCenter=true&random=false&width=800&lines=JavaScript+React+HTML+CSS+NodeJS+%D0%91%D0%AD%D0%9C+MongoDB+)](https://git.io/typing-svg)
 
+## Статистика используемых языков во всех моих проектах
+
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Slava65&layout=compact&custom_title=Используемые_языки&locale=ru)](https://github.com/anuraghazra/github-readme-stats)
 
+## Статистика моего участия в учебных онлайн-платформах и профессиональных форумах
+
 [![codewars](https://www.codewars.com/users/SuperPowerMan/badges/large)](https://www.codewars.com/users/SuperPowerMan)
+
+[![My LeetCode stats](https://leetcode-stats-six.vercel.app/api?username=SuperPowerMan)](https://github.com/SuperPowerMan/leetcode-stats)
+
+[![My StackOverflow](https://github-readme-stackoverflow.vercel.app/?userID=455668)](https://ru.stackoverflow.com/users/455668/slava65) 
 
