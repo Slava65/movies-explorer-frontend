@@ -1,3 +1,5 @@
+[![Readme Quotes](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark)](https://github.com/piyushsuthar/github-readme-quotes)
+
 # Movies Explorer Frontend
 ## О проекте
  
@@ -63,12 +65,16 @@
 
 ### Статистика моего участия в учебных онлайн-платформах и профессиональных форумах
 
+
 _Codewars_
+
 [![codewars](https://www.codewars.com/users/SuperPowerMan/badges/large)](https://www.codewars.com/users/SuperPowerMan)
 
 _LeetCode_
+
 [![My LeetCode stats](https://leetcode-stats-six.vercel.app/api?username=Tuzenbobel)](https://github.com/Tuzenbobel/leetcode-stats)
 
 _StackOverflow_
+
 <a href="https://ru.stackoverflow.com/users/455668/slava65"><img src="https://ru.stackoverflow.com/users/flair/455668.png" width="208" height="58" alt="Профиль участника Slava65 на сайте &#171;Stack Overflow на русском&#187;, Вопросы и ответы для программистов" title="Профиль участника Slava65 на сайте &#171;Stack Overflow на русском&#187;, Вопросы и ответы для программистов"></a>
 
