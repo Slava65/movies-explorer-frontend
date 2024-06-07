@@ -31,7 +31,7 @@
 
 ## Используемые технологии 
 
-<div display="flex" flex-direction="row" justify-content="space-between">
+<div display="flex" flex-direction="row" justify-content="space-between" width="100%">
 <img src="/public/readme_pic_techs/javascript.svg" width="100" height="100" alt="JavaScript">
 <img src="/public/readme_pic_techs/react.svg" width="100" height="100" alt="React">
 <img src="/public/readme_pic_techs/html5.svg" width="100" height="100" alt="HTML">
