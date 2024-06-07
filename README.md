@@ -63,7 +63,7 @@
 
 [![codewars](https://www.codewars.com/users/SuperPowerMan/badges/large)](https://www.codewars.com/users/SuperPowerMan)
 
-[![My LeetCode stats](https://leetcode-stats-six.vercel.app/api?username=SuperPowerMan)](https://github.com/SuperPowerMan/leetcode-stats)
+[![My LeetCode stats](https://leetcode-stats-six.vercel.app/api?username=Tuzenbobel)](https://github.com/Tuzenbobel/leetcode-stats)
 
 [![My StackOverflow](https://github-readme-stackoverflow.vercel.app/?userID=455668)](https://ru.stackoverflow.com/users/455668/slava65) 
 
