@@ -113,7 +113,7 @@ class MainApi {
 }
 
 export const mainapi = new MainApi({
-  url: "http://localhost:3001",
+  url: "http://udacha.fun/api",
   headers: {
     "Content-Type": "application/json"
   },
